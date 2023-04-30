@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+        }
+        button{
+            width: 200px;
+            height: 55px;
+            /* padding: 10px 0 10px 0; */
+            background-color: rgb(89, 44, 161);
+            color: white;
+            font-family: 'poppins';
+            font-size: 20px;
+            border: 2px solid rgb(89, 44, 161);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .load{
+            width: 30px;
+            height: 30px;
+            border: 3px solid transparent;
+            border-top: 3px solid rgb(255, 255, 255);
+            border-radius: 50%;
+            animation: anima 1s ease infinite;
+        }
+        @keyframes anima {
+            0%{
+                transform: rotate(0turn);
+            }100%{
+                transform: rotate(2turn);
+            }
+        }
+
+    </style>
+</head>
+<body class="body">
+    <button class="changes">Click Me</button>
+    
+    <script>
+        btn=document.querySelector(".changes");
+        btn.onclick = function () {
+            body=document.querySelector(".body");
+            this.innerHTML = "<div class='load'></div>";
+            setTimeout(() => {
+                this.innerHTML = "Changes Saved";
+                this.style.background = "white";
+                this.style.color = "rgb(89, 44, 161)";
+                this.style.border = "white";
+                setTimeout(() => {
+                    this.innerHTML = "Click Me";
+                    this.style.background = "rgb(89, 44, 161)";
+                    this.style.color = "white";
+                    this.style.border = "rgb(89, 44, 161)";
+                    body.style.background = "green";
+                }, 1000);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
